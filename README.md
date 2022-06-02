@@ -3,7 +3,7 @@
 
 This code accompanies the following paper:
 
-> Todd, Huang, Needle, Hay, and King (2022). Unsupervised morphological segmentation in a language with reduplication. To appear in Proceedings of the 19th SIGMORPHON Workshop on Computational Research in Phonetics, Phonology, and Morphology. Stroudsburg, PA: Association for Computational Linguistics.
+> Todd, Huang, Needle, Hay, and King (to appear). Unsupervised morphological segmentation in a language with reduplication. In Proceedings of the 19th SIGMORPHON Workshop on Computational Research in Phonetics, Phonology, and Morphology. Stroudsburg, PA: Association for Computational Linguistics.
 
 **Please note:**  
 - Documentation and tidying of the code is ongoing. Flags may change during this process.  
