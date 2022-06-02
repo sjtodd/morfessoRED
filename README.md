@@ -7,6 +7,7 @@ This code accompanies the following paper:
 
 **Please note:**  
 - Documentation and tidying of the code is ongoing. Flags may change during this process.  
+- We will add detailed description of the model adjustments when we are able.  
 - The data used to train models in the paper cannot be provided due to licensing restrictions.  
 - For now, this code is a patch that uses the infrastructure of Morfessor 2.0 and replaces some of the source files of that package. We will not distribute it as a standalone Python package until documentation is complete and all features have been thoroughly tested.  
 - The reduplication templates are defined in the function `ReduplicationFinder._is_valid_redspan()` at the bottom of `representations.py`. Phonological weight is defined in the `Construction.weight` property in `representations.py`. Both are currently specific to Māori; we will remove this hard-coding and provide a more user-friendly interface when we are able.  
