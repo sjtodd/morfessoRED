@@ -30,6 +30,7 @@ A text file, with one word per line, split into atoms (phonemes, syllables, etc.
 
 ## Sample usage
 
+Training a model with reduplication templates:  
 ```
 python morfessor -t training_input.txt -S training_output.txt --atom-separator " " --strip-atom-sep --compound-separator "" --forcesplit "" --regexsplit "(?<=(\S)) (?=\1)" --randseed 123 --finish-threshold 0.00005 --progressbar --Lred-minbase-weight 2 --Rred-minbase-weight 4 --left-reduplication --right-reduplication --skippable-full-red --delay-nonedge-red --backup
 ```
@@ -98,40 +99,40 @@ In addition, the following flags are unique to this extension and relevant to th
 
 Model with no reduplication templates:  
 ```
-python morfessor -t input.txt -S output.txt --atom-separator " " --strip-atom-sep --compound-separator "" --forcesplit "" --regexsplit "(?<=(\S)) (?=\1)" --randseed 123 --finish-threshold 0.00005 --progressbar --Lred-minbase-weight 2 --Rred-minbase-weight 4 --delay-nonedge-red --backup
+python morfessor -t training_input.txt -S training_output.txt -T test_input.txt -o test_output.txt --atom-separator " " --strip-atom-sep --compound-separator "" --forcesplit "" --regexsplit "(?<=(\S)) (?=\1)" --randseed 123 --finish-threshold 0.00005 --progressbar --Lred-minbase-weight 2 --Rred-minbase-weight 4 --delay-nonedge-red --backup
 ```
 
 Model with full-reduplication template only:  
 ```
-python morfessor -t input.txt -S output.txt --atom-separator " " --strip-atom-sep --compound-separator "" --forcesplit "" --regexsplit "(?<=(\S)) (?=\1)" --randseed 123 --finish-threshold 0.00005 --progressbar --Lred-minbase-weight 2 --Rred-minbase-weight 4 --delay-nonedge-red --backup --full-red-only --skippable-full-red
+python morfessor -t training_input.txt -S training_output.txt -T test_input.txt -o test_output.txt --atom-separator " " --strip-atom-sep --compound-separator "" --forcesplit "" --regexsplit "(?<=(\S)) (?=\1)" --randseed 123 --finish-threshold 0.00005 --progressbar --Lred-minbase-weight 2 --Rred-minbase-weight 4 --delay-nonedge-red --backup --full-red-only --skippable-full-red
 ```
 
 Model with left-reduplication template only:  
 ```
-python morfessor -t input.txt -S output.txt --atom-separator " " --strip-atom-sep --compound-separator "" --forcesplit "" --regexsplit "(?<=(\S)) (?=\1)" --randseed 123 --finish-threshold 0.00005 --progressbar --Lred-minbase-weight 2 --Rred-minbase-weight 4 --delay-nonedge-red --backup --left-reduplication --disable-full-red
+python morfessor -t training_input.txt -S training_output.txt -T test_input.txt -o test_output.txt --atom-separator " " --strip-atom-sep --compound-separator "" --forcesplit "" --regexsplit "(?<=(\S)) (?=\1)" --randseed 123 --finish-threshold 0.00005 --progressbar --Lred-minbase-weight 2 --Rred-minbase-weight 4 --delay-nonedge-red --backup --left-reduplication --disable-full-red
 ```
 
 Model with right reduplication template only:  
 ```
-python morfessor -t input.txt -S output.txt --atom-separator " " --strip-atom-sep --compound-separator "" --forcesplit "" --regexsplit "(?<=(\S)) (?=\1)" --randseed 123 --finish-threshold 0.00005 --progressbar --Lred-minbase-weight 2 --Rred-minbase-weight 4 --delay-nonedge-red --backup --right-reduplication --disable-full-red
+python morfessor -t training_input.txt -S training_output.txt -T test_input.txt -o test_output.txt --atom-separator " " --strip-atom-sep --compound-separator "" --forcesplit "" --regexsplit "(?<=(\S)) (?=\1)" --randseed 123 --finish-threshold 0.00005 --progressbar --Lred-minbase-weight 2 --Rred-minbase-weight 4 --delay-nonedge-red --backup --right-reduplication --disable-full-red
 ```
 
 Model with full- and left-reduplication templates:  
 ```
-python morfessor -t input.txt -S output.txt --atom-separator " " --strip-atom-sep --compound-separator "" --forcesplit "" --regexsplit "(?<=(\S)) (?=\1)" --randseed 123 --finish-threshold 0.00005 --progressbar --Lred-minbase-weight 2 --Rred-minbase-weight 4 --delay-nonedge-red --backup --left-reduplication --skippable-full-red
+python morfessor -t training_input.txt -S training_output.txt -T test_input.txt -o test_output.txt --atom-separator " " --strip-atom-sep --compound-separator "" --forcesplit "" --regexsplit "(?<=(\S)) (?=\1)" --randseed 123 --finish-threshold 0.00005 --progressbar --Lred-minbase-weight 2 --Rred-minbase-weight 4 --delay-nonedge-red --backup --left-reduplication --skippable-full-red
 ```
 
 Model with full- and right-reduplication templates:  
 ```
-python morfessor -t input.txt -S output.txt --atom-separator " " --strip-atom-sep --compound-separator "" --forcesplit "" --regexsplit "(?<=(\S)) (?=\1)" --randseed 123 --finish-threshold 0.00005 --progressbar --Lred-minbase-weight 2 --Rred-minbase-weight 2 --delay-nonedge-red --backup --right-reduplication --skippable-full-red
+python morfessor -t training_input.txt -S training_output.txt -T test_input.txt -o test_output.txt --atom-separator " " --strip-atom-sep --compound-separator "" --forcesplit "" --regexsplit "(?<=(\S)) (?=\1)" --randseed 123 --finish-threshold 0.00005 --progressbar --Lred-minbase-weight 2 --Rred-minbase-weight 2 --delay-nonedge-red --backup --right-reduplication --skippable-full-red
 ```
 
 Model with left- and right-reduplication templates:  
 ```
-python morfessor -t input.txt -S output.txt --atom-separator " " --strip-atom-sep --compound-separator "" --forcesplit "" --regexsplit "(?<=(\S)) (?=\1)" --randseed 123 --finish-threshold 0.00005 --progressbar --Lred-minbase-weight 2 --Rred-minbase-weight 4 --delay-nonedge-red --backup --left-reduplication --right-reduplication --disable-full-red
+python morfessor -t training_input.txt -S training_output.txt -T test_input.txt -o test_output.txt --atom-separator " " --strip-atom-sep --compound-separator "" --forcesplit "" --regexsplit "(?<=(\S)) (?=\1)" --randseed 123 --finish-threshold 0.00005 --progressbar --Lred-minbase-weight 2 --Rred-minbase-weight 4 --delay-nonedge-red --backup --left-reduplication --right-reduplication --disable-full-red
 ```
 
 Model with all reduplication templates:  
 ```
-python morfessor -t input.txt -S output.txt --atom-separator " " --strip-atom-sep --compound-separator "" --forcesplit "" --regexsplit "(?<=(\S)) (?=\1)" --randseed 123 --finish-threshold 0.00005 --progressbar --Lred-minbase-weight 2 --Rred-minbase-weight 4 --delay-nonedge-red --backup --left-reduplication --right-reduplication --skippable-full-red
+python morfessor -t training_input.txt -S training_output.txt -T test_input.txt -o test_output.txt --atom-separator " " --strip-atom-sep --compound-separator "" --forcesplit "" --regexsplit "(?<=(\S)) (?=\1)" --randseed 123 --finish-threshold 0.00005 --progressbar --Lred-minbase-weight 2 --Rred-minbase-weight 4 --delay-nonedge-red --backup --left-reduplication --right-reduplication --skippable-full-red
 ```
